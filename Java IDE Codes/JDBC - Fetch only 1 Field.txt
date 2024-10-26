@@ -10,6 +10,7 @@ public class DemoJdbc {
         String url ="jdbc:postgresql://localhost:5432/Demo_SD";
         String user = "postgres";
         String pass = "Delta@0000";
+        
 
         Connection con = DriverManager.getConnection(url,user,pass);
 
@@ -21,23 +22,21 @@ public class DemoJdbc {
 
 // Step 6 ( Execute Statement )
 
-        String query_3 =  "select * from \"Student_SD\"";
+        String query_1 = "Select \"Name\" from \"Student_SD\" where \"st_id\" = 44";
+        //String query_2 = "Select \"Class\" from \"Student_SD\" where \"Name\" = \'Sohini\'";
 
-        ResultSet rs = st.executeQuery(query_3);
+        ResultSet rs = st.executeQuery(query_1);
 
-        while(rs.next()){
+        System.out.println(rs.next());
 
-            System.out.print(rs.getInt(1) + " ");
-            System.out.print(rs.getString(2)+ " ");
-            System.out.print(rs.getString(3));
-
-            System.out.println();
-        }
+        String ans = rs.getString("Name");
+        System.out.println(ans);
+		
 // Step 7
 
         con.close();
         System.out.println("Connect is Closed");
 
-    }
+    }
 
 }

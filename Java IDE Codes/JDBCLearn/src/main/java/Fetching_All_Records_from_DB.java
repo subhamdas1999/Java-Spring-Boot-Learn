@@ -1,6 +1,12 @@
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.Statement;
+
+
 import java.sql.*;
 
-public class DemoJdbc {
+public class Fetching_All_Records_from_DB {
     public static void main(String[] args) throws Exception{
 
 // Step 2 and 3 ( Optional / not needed now , After JAVA 8 )
